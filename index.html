@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notion Image Slider</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundleox-sizing: border-box; }
+    body { margin: 0; background: #fff; font-family: system-ui, sans-serif; }
+    .slider-wrap { max-width: 1200px; margin: 0 auto; padding: 12px; }
+    .swiper { width: 100%; height: auto justify-content: center; background: #f7f7f7; border-radius: 12px; overflow: hidden; }
+    .swiper-slide img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .swiper-button-next, .swiper-button-prev { color: #222; transition: opacity .2s ease; }
+    .swiper-button-next:hover, .swiper-button-prev:hover { opacity: 0.7; }
+    @media (max-width: 1024px) { .swiper-slide img { height: 200px; } }
+    @media (max-width: 768px) { .swiper-slide img { height: 180px; } }
+    @media (max-width: 480px) { .swiper-slide img { height: 160px; } }
+  </style>
+</head>
+<body>
+  <div class="slider-wrap">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <!-- 22 images -->
+        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765363755733_1.jpg"    <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/176_2.jpg</div>
+        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765363795877_3.jpg" alt="Photo 3s="swiper-slide"><img src="https://buymmog.oss-us-east-.com/1765363817575_4.jpg</div>
+        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/176_5.jpg</div>
+        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765363937632v>
+        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/176_7.jpg</div>
+        <div class="swiper-slide">https://buymmog.oss-us-east-1.aliyuncs.com/1765364053789_8.jpg</div>
+        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765364073253_9.jpg"    <div class="swiper-slide"><img src="https://buymmog.t-1.aliyuncs.com/1765364088080_10.jpg</div>
+        <div class="swiper-slide"><img src="https.oss-us-east-1.aliyuncs.com/1765364100850_11.jpg</div>
+        <div class="swiper-slide"><img src="https://buymmog.oss-us-easts.com/1765364124681_12.jpg</div>
+        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliy765364137341_13.jpg</div>
+        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765364149674_14.jpg     <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/176536416g</div>
+        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/176536417813div>
+        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765364191547_17.jpg"    <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765364210881iv>
+        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765364228972_19.jpg" alt="Photo ss="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/721_20.jpg</div>
+        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765364256990_21.jpg" alt="Photo 21="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765364270478_22.jpg" alt="v>
+      <div class="swiper-button-prev" aria-label="Previous"></div>
+      <div class="swiper-button-next" aria-label="Next"></div>
+    </div>
+  </div>
+
+  <!-- Swiper JS -->
+  https://unpkg.com/swiper@11/swiper-bundle.min.js
+  <script>
+    const swiper = new Swiper('.swiper', {
+      speed: 500,
+      loop: true, // ✅ Looping enabled
+      autoplay: false, // ✅ No autoplay
+      slidesPerView: 5,
+      slidesPerGroup: 3,
+      spaceBetween: 12,
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      keyboard: { enabled: true },
+      loopAdditionalSlides: 10,
+      loopPreventsSliding: false,
+      breakpoints: {
+        1280: { slidesPerView: 5, slidesPerGroup: 3 },
+        1024: { slidesPerView: 4, slidesPerGroup: 2 },
+        768: { slidesPerView: 3, slidesPerGroup: 2 },
+        480: { slidesPerView: 2, slidesPerGroup: 1 },
+        0: { slidesPerView: 1, slidesPerGroup: 1 }
+      }
+    });
+  </script>
+</body>
+</html>
+``
