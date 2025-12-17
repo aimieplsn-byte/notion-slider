@@ -4,83 +4,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Notion Image Slider</title>
+  <title>Notion Image Slider (Thumbnails)</title>
 
   <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundleox-sizing: border-box; }
+  <link rel="stylesheet" href="https://ndle.min.css
+
+  <style>
+    * { box-sizing: border-box; }
     body { margin: 0; background: #fff; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
 
     .slider-wrap {
-      max-width: 1200px;      /* Overall width of the slider container */
+      max-width: 1200px;       /* Make wider/narrower as you like */
       margin: 0 auto;
-      padding: 12px 24px;     /* room for arrows */
+      padding: 16px 40px;      /* room for the arrows */
       position: relative;
     }
 
-    /* Swiper area without gray background */
-    .swiper {
-      width: 100%;
-      height: auto;
-    }
+    .swiper { width: 100%; }
 
-    /* Each slide is just the image */
+    /* Make each slide a small fixed thumbnail */
     .swiper-slide {
-      overflow: hidden;       /* crop if needed */
+      width: 120px !important;   /* fixed width per thumbnail */
+      height: 150px !important;  /* fixed height per thumbnail */
+      overflow: hidden;
+      border-radius: 8px;        /* subtle rounding; set to 0 if you don’t want it */
+      background: #f3f3f3;       /* shows while image loads */
     }
 
     .swiper-slide img {
       width: 100%;
-      height: 220px;          /* adjust to taste */
-      object-fit: cover;      /* fill nicely without squashing */
+      height: 100%;
+      object-fit: cover;         /* fills the 120×150 without distortion */
       display: block;
     }
 
-    /* Gap between images */
-    :root { --gap: 8px; }     /* change this to 0 for edge-to-edge */
-    .swiper {
-      --swiper-navigation-size: 28px; /* arrow icon size */
-    }
+    /* Gap between thumbnails */
+    :root { --thumb-gap: 8px; }
+    .swiper-wrapper { gap: var(--thumb-gap); }
+    /* Sync JS spacing with CSS gap using spaceBetween below */
 
-    /* Navigation arrows */
+    /* Arrows */
     .swiper-button-next, .swiper-button-prev {
       color: #222;
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.95);
+      width: 34px; height: 34px;
       border-radius: 999px;
-      width: 36px; height: 36px;
       box-shadow: 0 2px 8px rgba(0,0,0,.12);
-      backdrop-filter: saturate(120%) blur(2px);
     }
+    .swiper-button-prev { left: 6px; }
+    .swiper-button-next { right: 6px; }
     .swiper-button-next:hover, .swiper-button-prev:hover { background: #fff; }
 
-    /* Shift arrows slightly outside the strip */
-    .swiper-button-prev { left: 0; }
-    .swiper-button-next { right: 0; }
-
-    /* Responsive image heights */
-    @media (max-width: 1024px) { .swiper-slide img { height: 200px; } }
-    @media (max-width: 768px)  { .swiper-slide img { height: 180px; } }
-    @media (max-width: 480px)  { .swiper-slide img { height: 160px; } }
+    /* Responsive: slightly smaller thumbnails on narrow screens */
+    @media (max-width: 768px) {
+      .swiper-slide { width: 100px !important; height: 130px !important; }
+      :root { --thumb-gap: 6px; }
+    }
+    @media (max-width: 480px) {
+      .swiper-slide { width: 88px !important; height: 110px !important; }
+      :root { --thumb-gap: 4px; }
+    }
   </style>
 </head>
 <body>
   <div class="slider-wrap">
-    <!-- Swiper container -->
     <div class="swiper">
-      <div class="swiper-wrapper" style="gap: var(--gap);">
+      <div class="swiper-wrapper">
         <!-- 22 images -->
-        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765363755733_1.jpg" alt="Photo ss="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765363779892_2.jpg" alt<div class="swiper-slide">https://buymmog.oss-us-east-1.aliyuncs.com/1765363795877_3.jpg</div>
-        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/176536381757iv>
-        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765363850876_5.jpg" alt="Photoass="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765363937632_6.jpg     <div class="swiper-slide"><img src="https://buymmog.oss-us-east-.com/1765363959715_7.jpg</div>
-        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765364053789_8.jpg" alt="Photoass="swiper-slide"><ttps://buymmog.oss-us-east-1.aliyuncs.com/1765364073253_9.jpg</div>
-        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765364088080_10.jpg" alt="iv class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/176_11.jpg</div>
-        <div class="swiper-slide"><img src="https://buymmog.t-1.aliyuncs.com/1765364124681_12.jpg</div>
-        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com7341_13.jpg</div>
-        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/176536414g</div>
-        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765364162603_15.jpg" alt="Photo 15="swiper-slide">https://buymmog.oss-us-east-1.aliyuncs.com/1765364178137_16.jpg</div>
+        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765363755733_1.jpg"    <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/176536jpg</div>
+        <div class="swiper-slide">https://buymmog.oss-us-east-1.aliyuncs.com/1765363795877_3.jpg</div>
+        <div class="swiper-slide"><ttps://buymmog.oss-us-east-1.aliyuncs.com/1765363817575_4.jpg</div>
+        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/176536385087iv>
+        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com7632_6.jpg</div>
+        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765363959715_7.jpg" alt="Photo 7s="swiper-slide">https://buymmog.oss-us-east-1.aliyuncs.com/1765364053789_8.jpg</div>
+        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/176536407325iv>
+        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765364088080_10.jpg     <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/176536410g</div>
+        <div class="swiper-slide"><img src="https://buymmogst-1.aliyuncs.com/1765364124681_12.jpg</div>
+        <div class="swiper-slide">https://buymmog.oss-us-east-1.aliyuncs.com/1765364137341_13.jpg</div>
+        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/176536.jpg</div>
+        <div class="swiper-slide">https://buymmog.oss-us-east-1.aliyuncs.com/1765364162603_15.jpg</div>
+        <div class="swiper-slide"><img src="https://buymmog.oss.aliyuncs.com/1765364178137_16.jpg</div>
         <div class="swiper-slide">https://buymmog.oss-us-east-1.aliyuncs.com/1765364191547_17.jpg</div>
-        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765364210881_18.jpg" alt<div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765364228972_19.jpg" alt="Photo ss="swiper-slide"><img src="https://buymmog.oss-us-easts.com/1765364244721_20.jpg</div>
-        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765364256990iv>
-        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765364270478_22.jpg   </div>
+        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765364210881_18.jpg" alt="Photoass="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765364228972_19.jpg" alt="iv class="swiper-slide"><img src="https://buym-east-1.aliyuncs.com/1765364244721_20.jpg</div>
+        <div class="swiper-slide"><img src="https://buymmog.t-1.aliyuncs.com/1765364256990_21.jpg</div>
+        <div class="swiper-slide"><img src="https://buymmog.oss-us-east-1.aliyuncs.com/1765364270478_22.jpg" alt="v>
 
       <!-- Arrows -->
       <div class="swiper-button-prev" aria-label="Previous"></div>
@@ -89,29 +96,33 @@
   </div>
 
   <!-- Swiper JS -->
-  https://unpkg.com/swiper@11/swiper-bundle.min.js</script>
+  <script src="https://unpkg.com/swiper@11/swiper-bundlept>
   <script>
     const swiper = new Swiper('.swiper', {
-      speed: 500,
+      speed: 450,
       loop: true,
       autoplay: false,
-      slidesPerView: 5,        // number visible on desktop
-      slidesPerGroup: 3,       // moves by 3 per click
-      spaceBetween: 8,         // same as --gap for visual consistency
+
+      /* Because each slide has a fixed width,
+         use 'auto' so Swiper calculates how many fit in view */
+      slidesPerView: 'auto',
+      slidesPerGroup: 3,           // move 3 thumbnails per click
+      spaceBetween: 8,             // keep in sync with --thumb-gap
+
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
       keyboard: { enabled: true },
+      centeredSlides: false,
+
+      /* Keep looping smooth even if slide count isn't a multiple of group size */
       loopAdditionalSlides: 10,
       loopPreventsSliding: false,
-      breakpoints: {
-        1280: { slidesPerView: 5, slidesPerGroup: 3, spaceBetween: 8 },
-        1024: { slidesPerView: 4, slidesPerGroup: 2, spaceBetween: 8 },
-        768:  { slidesPerView: 3, slidesPerGroup: 2, spaceBetween: 8 },
-        480:  { slidesPerView: 2, slidesPerGroup: 1, spaceBetween: 6 },
-        0:    { slidesPerView: 1, slidesPerGroup: 1, spaceBetween: 4 }
-           }
+
+      /* Optional: make swipes feel snappy on touch devices      /* Optional: make swipes feel snappy on touch devices */
+      resistanceRatio: 0.65
     });
   </script>
 </body>
+
